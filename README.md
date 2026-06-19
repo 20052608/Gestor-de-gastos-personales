@@ -35,7 +35,7 @@ Aplicación web de finanzas personales donde el usuario registra ingresos y gast
 ##  Fases del Proyecto
 
 - [x] Fase 1: Propuesta y diseño
-- [ ] Fase 2: Desarrollo
+- [x] Fase 2: Desarrollo
 - [ ] Fase 3: Pruebas
 - [ ] Fase 4: Entrega
 
