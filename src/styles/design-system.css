@@ -1,17 +1,10 @@
 /* ============================================
-<<<<<<< HEAD
    SISTEMA DE DISEÑO - FinTrack Pro v2.0
    Paleta: #D7D7D7 → #ACC0D0 → #81A9C9 → #5692C2 → #2B7BBB → #0064B2
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
-=======
-   SISTEMA DE DISEÑO - FinTrack Pro
-   Paleta: #D7D7D7 → #ACC0D0 → #81A9C9 → #5692C2 → #2B7BBB → #0064B2
-   ============================================ */
-
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 :root {
   /* === PALETA DE AZULES === */
   --gray-light: #D7D7D7;
@@ -20,7 +13,6 @@
   --blue-medium: #5692C2;
   --blue: #2B7BBB;
   --blue-dark: #0064B2;
-<<<<<<< HEAD
 
   /* === FONDOS === */
   --bg-primary: #F0F4F8;
@@ -32,39 +24,21 @@
   --bg-sidebar-hover: rgba(255,255,255,0.06);
   --bg-sidebar-active: rgba(43, 123, 187, 0.15);
 
-=======
-  
-  /* === FONDOS (tema claro profesional) === */
-  --bg-primary: #F8FAFC;
-  --bg-secondary: #FFFFFF;
-  --bg-tertiary: #F1F5F9;
-  --bg-elevated: #E2E8F0;
-  --bg-hover: #CBD5E1;
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === TEXTO === */
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --text-muted: #94A3B8;
   --text-inverse: #FFFFFF;
-<<<<<<< HEAD
   --text-sidebar: #CBD5E1;
   --text-sidebar-muted: #64748B;
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === ACENTOS === */
   --accent-primary: var(--blue);
   --accent-primary-hover: var(--blue-dark);
   --accent-secondary: var(--blue-medium);
   --accent-gradient: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
   --accent-gradient-soft: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%);
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === ESTADOS FINANCIEROS === */
   --income: #059669;
   --income-soft: rgba(5, 150, 105, 0.12);
@@ -74,42 +48,26 @@
   --expense-glow: rgba(220, 38, 38, 0.25);
   --warning: #D97706;
   --warning-soft: rgba(217, 119, 6, 0.12);
-<<<<<<< HEAD
   --info: #3B82F6;
   --info-soft: rgba(59, 130, 246, 0.12);
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === BORDES === */
   --border-subtle: rgba(43, 123, 187, 0.08);
   --border-default: rgba(43, 123, 187, 0.15);
   --border-focus: rgba(43, 123, 187, 0.4);
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === SOMBRAS === */
   --shadow-sm: 0 1px 2px rgba(0, 100, 178, 0.06);
   --shadow-md: 0 4px 12px rgba(0, 100, 178, 0.10);
   --shadow-lg: 0 8px 30px rgba(0, 100, 178, 0.15);
   --shadow-glow: 0 0 25px rgba(43, 123, 187, 0.25);
   --shadow-blue: 0 4px 20px rgba(43, 123, 187, 0.2);
-<<<<<<< HEAD
   --shadow-sidebar: 4px 0 24px rgba(0,0,0,0.08);
 
   /* === TIPOGRAFÍA === */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-=======
-  
-  /* === TIPOGRAFÍA === */
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === ESPACIADO === */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -120,33 +78,21 @@
   --space-8: 2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
-<<<<<<< HEAD
   --space-16: 4rem;
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === BORDES REDONDEADOS === */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-xl: 20px;
-<<<<<<< HEAD
   --radius-2xl: 28px;
   --radius-full: 9999px;
 
-=======
-  --radius-full: 9999px;
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   /* === TRANSICIONES === */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
-<<<<<<< HEAD
   --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 * {
@@ -187,13 +133,10 @@ body {
   background: var(--blue-medium);
 }
 
-<<<<<<< HEAD
 /* ============================================
    UTILIDADES
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px);
@@ -207,32 +150,25 @@ body {
   background-clip: text;
 }
 
-<<<<<<< HEAD
 /* ============================================
    ANIMACIONES KEYFRAMES
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-<<<<<<< HEAD
 @keyframes fadeInScale {
   from { opacity: 0; transform: scale(0.95) translateY(12px); }
   to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(-16px); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-<<<<<<< HEAD
 @keyframes slideInRight {
   from { opacity: 0; transform: translateX(16px); }
   to { opacity: 1; transform: translateX(0); }
@@ -289,8 +225,6 @@ body {
    BOTONES
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .btn {
   display: inline-flex;
   align-items: center;
@@ -305,7 +239,6 @@ body {
   transition: all var(--transition-fast);
   font-family: inherit;
   letter-spacing: 0.01em;
-<<<<<<< HEAD
   position: relative;
   overflow: hidden;
 }
@@ -321,8 +254,6 @@ body {
 
 .btn:hover::after {
   opacity: 1;
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .btn-primary {
@@ -336,13 +267,10 @@ body {
   box-shadow: var(--shadow-glow), var(--shadow-blue);
 }
 
-<<<<<<< HEAD
 .btn-primary:active {
   transform: translateY(0);
 }
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .btn-secondary {
   background: var(--bg-secondary);
   color: var(--blue);
@@ -371,7 +299,6 @@ body {
   border: 1px solid rgba(220, 38, 38, 0.15);
 }
 
-<<<<<<< HEAD
 .btn-danger:hover {
   background: var(--expense);
   color: white;
@@ -391,8 +318,6 @@ body {
    INPUTS
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .input {
   width: 100%;
   padding: var(--space-3) var(--space-4);
@@ -423,13 +348,10 @@ body {
   padding-right: 2.5rem;
 }
 
-<<<<<<< HEAD
 /* ============================================
    CARDS
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
@@ -444,13 +366,10 @@ body {
   box-shadow: var(--shadow-md);
 }
 
-<<<<<<< HEAD
 /* ============================================
    BADGES
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .badge {
   display: inline-flex;
   align-items: center;
@@ -478,7 +397,6 @@ body {
   color: var(--warning);
 }
 
-<<<<<<< HEAD
 .badge-info {
   background: var(--info-soft);
   color: var(--info);
@@ -488,8 +406,6 @@ body {
    PROGRESS BARS
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .progress-bar {
   height: 6px;
   background: var(--bg-tertiary);
@@ -503,13 +419,10 @@ body {
   transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-<<<<<<< HEAD
 /* ============================================
    LIST ITEMS
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .list-item {
   display: flex;
   align-items: center;
@@ -522,13 +435,10 @@ body {
   background: var(--bg-tertiary);
 }
 
-<<<<<<< HEAD
 /* ============================================
    ICON CIRCLES
    ============================================ */
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .icon-circle {
   width: 40px;
   height: 40px;
@@ -547,7 +457,6 @@ body {
 .icon-circle-expense {
   background: var(--expense-soft);
   color: var(--expense);
-<<<<<<< HEAD
 }
 
 /* ============================================
@@ -590,6 +499,3 @@ body {
   opacity: 1;
   transform: translateX(-50%) scale(1);
 }
-=======
-}
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

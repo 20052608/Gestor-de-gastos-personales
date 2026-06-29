@@ -1,16 +1,10 @@
-<<<<<<< HEAD
 <template>
   <Card class="list-card" :delay="200">
-=======
-<<template>
-  <Card>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     <template #header>
       <SectionHeader 
         title="Historial de Transacciones" 
         :subtitle="`${transactions.length} movimientos este mes`"
         icon="fas fa-list-ul"
-<<<<<<< HEAD
         badge="En tiempo real"
         badge-variant="info"
       >
@@ -18,32 +12,17 @@
           <button class="btn btn-secondary btn-sm" @click="$emit('export')">
             <i class="fas fa-download"></i>
             <span class="btn-text">Exportar CSV</span>
-=======
-      >
-        <template #actions>
-          <button class="btn btn-secondary" @click="$emit('export')">
-            <i class="fas fa-download"></i>
-            Exportar CSV
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           </button>
         </template>
       </SectionHeader>
     </template>
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     <div class="transactions-list">
       <div 
         v-for="(t, index) in transactions" 
         :key="t.id"
         class="transaction-row"
-<<<<<<< HEAD
         :class="[t.type, { 'is-new': index === 0 }]"
-=======
-        :class="t.type"
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
         :style="{ animationDelay: `${index * 40}ms` }"
       >
         <div class="transaction-main">
@@ -55,7 +34,6 @@
             <span class="transaction-desc">{{ t.description || 'Sin descripción' }}</span>
           </div>
         </div>
-<<<<<<< HEAD
 
         <div class="transaction-meta">
           <div class="transaction-date">
@@ -67,20 +45,10 @@
             <span class="amount-value">${{ t.amount.toLocaleString('es-ES', { minimumFractionDigits: 2 }) }}</span>
           </span>
           <button @click="$emit('delete', t.id)" class="btn-delete" title="Eliminar">
-=======
-        
-        <div class="transaction-meta">
-          <span class="transaction-date">{{ formatDate(t.date) }}</span>
-          <span class="transaction-amount" :class="t.type">
-            {{ t.type === 'income' ? '+' : '-' }}${{ t.amount.toLocaleString('es-ES', { minimumFractionDigits: 2 }) }}
-          </span>
-          <button @click="$emit('delete', t.id)" class="btn-delete">
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
             <i class="fas fa-trash-alt"></i>
           </button>
         </div>
       </div>
-<<<<<<< HEAD
 
       <div v-if="transactions.length === 0" class="empty-state">
         <div class="empty-illustration">
@@ -99,15 +67,6 @@
           <i class="fas fa-arrow-up"></i>
           <span>Empieza por ahí</span>
         </div>
-=======
-      
-      <div v-if="transactions.length === 0" class="empty-state">
-        <div class="empty-icon">
-          <i class="fas fa-inbox"></i>
-        </div>
-        <p>No hay transacciones este mes</p>
-        <span>Agrega tu primer movimiento arriba</span>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       </div>
     </div>
   </Card>
@@ -149,13 +108,10 @@ const formatDate = (dateStr) => {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
 .list-card {
   margin-bottom: var(--space-6);
 }
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .transactions-list {
   display: flex;
   flex-direction: column;
@@ -169,7 +125,6 @@ const formatDate = (dateStr) => {
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
-<<<<<<< HEAD
   animation: fadeInSlide 0.4s ease forwards;
   opacity: 0;
   position: relative;
@@ -194,15 +149,10 @@ const formatDate = (dateStr) => {
 
 .transaction-row.expense::before {
   background: var(--expense);
-=======
-  animation: fadeIn 0.35s ease forwards;
-  opacity: 0;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-row:hover {
   background: var(--bg-tertiary);
-<<<<<<< HEAD
   transform: translateX(4px);
 }
 
@@ -213,8 +163,6 @@ const formatDate = (dateStr) => {
 @keyframes highlightNew {
   0% { background: rgba(43, 123, 187, 0.08); }
   100% { background: transparent; }
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-main {
@@ -222,7 +170,6 @@ const formatDate = (dateStr) => {
   align-items: center;
   gap: var(--space-3);
   flex: 1;
-<<<<<<< HEAD
   min-width: 0;
 }
 
@@ -261,41 +208,12 @@ const formatDate = (dateStr) => {
 
 .transaction-row:hover .icon-wrapper {
   transform: scale(1.08) rotate(-4deg);
-=======
-}
-
-.icon-wrapper {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.95rem;
-  flex-shrink: 0;
-  transition: all var(--transition-fast);
-}
-
-.icon-wrapper.income {
-  background: var(--income-soft);
-  color: var(--income);
-}
-
-.icon-wrapper.expense {
-  background: var(--expense-soft);
-  color: var(--expense);
-}
-
-.transaction-row:hover .icon-wrapper {
-  transform: scale(1.08);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
-<<<<<<< HEAD
   min-width: 0;
 }
 
@@ -306,42 +224,27 @@ const formatDate = (dateStr) => {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-=======
-}
-
-.transaction-category {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: var(--text-primary);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-desc {
   font-size: 0.8rem;
   color: var(--text-muted);
-<<<<<<< HEAD
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-meta {
   display: flex;
   align-items: center;
   gap: var(--space-5);
-<<<<<<< HEAD
   flex-shrink: 0;
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-date {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
-<<<<<<< HEAD
   min-width: 70px;
   display: flex;
   align-items: center;
@@ -351,16 +254,12 @@ const formatDate = (dateStr) => {
 .transaction-date i {
   font-size: 0.7rem;
   opacity: 0.6;
-=======
-  min-width: 50px;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-amount {
   font-weight: 700;
   font-size: 1rem;
   font-family: var(--font-mono);
-<<<<<<< HEAD
   min-width: 120px;
   text-align: right;
   letter-spacing: -0.01em;
@@ -377,11 +276,6 @@ const formatDate = (dateStr) => {
 
 .amount-value {
   font-variant-numeric: tabular-nums;
-=======
-  min-width: 110px;
-  text-align: right;
-  letter-spacing: -0.01em;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-amount.income { color: var(--income); }
@@ -400,18 +294,14 @@ const formatDate = (dateStr) => {
   justify-content: center;
   transition: all var(--transition-fast);
   opacity: 0;
-<<<<<<< HEAD
   position: relative;
   overflow: hidden;
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .transaction-row:hover .btn-delete {
   opacity: 1;
 }
 
-<<<<<<< HEAD
 .btn-delete::after {
   content: '';
   position: absolute;
@@ -441,13 +331,6 @@ const formatDate = (dateStr) => {
 }
 
 /* Empty State */
-=======
-.btn-delete:hover {
-  background: var(--expense-soft);
-  color: var(--expense);
-}
-
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .empty-state {
   display: flex;
   flex-direction: column;
@@ -458,7 +341,6 @@ const formatDate = (dateStr) => {
   text-align: center;
 }
 
-<<<<<<< HEAD
 .empty-illustration {
   position: relative;
   width: 100px;
@@ -571,35 +453,6 @@ const formatDate = (dateStr) => {
   50% { transform: translateY(-4px); }
 }
 
-=======
-.empty-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: var(--radius-full);
-  background: var(--bg-tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: var(--blue-light);
-}
-
-.empty-state p {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-}
-
-.empty-state span {
-  font-size: 0.85rem;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(-10px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 @media (max-width: 640px) {
   .transaction-meta {
     gap: var(--space-3);
@@ -607,7 +460,6 @@ const formatDate = (dateStr) => {
   .transaction-date {
     display: none;
   }
-<<<<<<< HEAD
   .btn-text {
     display: none;
   }
@@ -616,7 +468,3 @@ const formatDate = (dateStr) => {
   }
 }
 </style>
-=======
-}
-</style>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

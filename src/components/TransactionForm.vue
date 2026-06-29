@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 <template>
   <Card class="form-card" glow :delay="100">
-=======
-<<template>
-  <Card class="form-card" glow>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     <template #header>
       <SectionHeader 
         title="Nueva Transacción" 
         subtitle="Registra un movimiento financiero"
-<<<<<<< HEAD
         icon="fas fa-plus-circle"
         icon-variant="outline"
       />
@@ -18,29 +12,16 @@
     <form @submit.prevent="handleSubmit" class="form-grid">
       <!-- Tipo de movimiento -->
       <div class="form-group full-width">
-=======
-        icon="fas fa-plus"
-      />
-    </template>
-    
-    <form @submit.prevent="handleSubmit" class="form-grid">
-      <div class="form-group">
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
         <label>Tipo de movimiento</label>
         <div class="type-selector">
           <button 
             type="button"
             :class="['type-btn', { active: form.type === 'income' }]"
-<<<<<<< HEAD
             @click="form.type = 'income'; resetCategory()"
-=======
-            @click="form.type = 'income'"
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           >
             <div class="type-icon income">
               <i class="fas fa-arrow-down"></i>
             </div>
-<<<<<<< HEAD
             <div class="type-info">
               <span class="type-label">Ingreso</span>
               <span class="type-desc">Dinero que recibes</span>
@@ -48,23 +29,15 @@
             <div class="type-check">
               <i class="fas fa-check"></i>
             </div>
-=======
-            <span>Ingreso</span>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           </button>
           <button 
             type="button"
             :class="['type-btn', { active: form.type === 'expense' }]"
-<<<<<<< HEAD
             @click="form.type = 'expense'; resetCategory()"
-=======
-            @click="form.type = 'expense'"
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           >
             <div class="type-icon expense">
               <i class="fas fa-arrow-up"></i>
             </div>
-<<<<<<< HEAD
             <div class="type-info">
               <span class="type-label">Gasto</span>
               <span class="type-desc">Dinero que gastas</span>
@@ -85,16 +58,6 @@
           </span>
         </label>
         <div class="amount-input" :class="{ 'has-value': form.amount }">
-=======
-            <span>Gasto</span>
-          </button>
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Monto</label>
-        <div class="amount-input">
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           <span class="currency">$</span>
           <input 
             v-model.number="form.amount" 
@@ -103,7 +66,6 @@
             step="0.01" 
             placeholder="0.00"
             required 
-<<<<<<< HEAD
             class="input"
           />
           <div class="amount-glow" :class="form.type"></div>
@@ -142,31 +104,10 @@
           <span class="optional">(opcional)</span>
           <span v-if="form.description" class="char-count">{{ form.description.length }}/100</span>
         </label>
-=======
-          />
-        </div>
-      </div>
-      
-      <div class="form-group">
-        <label>Categoría</label>
-        <select v-model="form.category" class="input select" required>
-          <option v-for="cat in filteredCategories" :key="cat" :value="cat">{{ cat }}</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label>Fecha</label>
-        <input v-model="form.date" type="date" class="input" required />
-      </div>
-      
-      <div class="form-group full-width">
-        <label>Descripción <span class="optional">(opcional)</span></label>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
         <input 
           v-model="form.description" 
           type="text" 
           class="input"
-<<<<<<< HEAD
           maxlength="100"
           placeholder="Ej: Compra supermercado, Pago nómina..."
         />
@@ -184,15 +125,6 @@
         </div>
         <span>Guardar {{ form.type === 'income' ? 'Ingreso' : 'Gasto' }}</span>
         <div class="btn-shine"></div>
-=======
-          placeholder="Ej: Compra supermercado, Pago nómina..."
-        />
-      </div>
-      
-      <button type="submit" class="btn btn-primary full-width">
-        <i class="fas fa-check"></i>
-        Guardar Transacción
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       </button>
     </form>
   </Card>
@@ -209,11 +141,7 @@ const today = new Date().toISOString().split('T')[0];
 
 const form = reactive({
   type: 'expense',
-<<<<<<< HEAD
   category: '',
-=======
-  category: 'Alimentación',
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   amount: '',
   date: today,
   description: ''
@@ -226,7 +154,6 @@ const filteredCategories = computed(() => {
   return form.type === 'income' ? incomeCategories : expenseCategories;
 });
 
-<<<<<<< HEAD
 const isValid = computed(() => {
   return form.amount > 0 && form.category && form.date;
 });
@@ -241,12 +168,6 @@ const handleSubmit = () => {
   form.amount = '';
   form.description = '';
   form.category = '';
-=======
-const handleSubmit = () => {
-  emit('add', { ...form });
-  form.amount = '';
-  form.description = '';
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 };
 </script>
 
@@ -278,19 +199,15 @@ const handleSubmit = () => {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-<<<<<<< HEAD
   display: flex;
   align-items: center;
   gap: var(--space-2);
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .optional {
   color: var(--text-muted);
   font-weight: 400;
   text-transform: none;
-<<<<<<< HEAD
   font-size: 0.75rem;
 }
 
@@ -313,10 +230,6 @@ const handleSubmit = () => {
 .amount-preview.expense { color: var(--expense); }
 
 /* Type Selector */
-=======
-}
-
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .type-selector {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -325,19 +238,10 @@ const handleSubmit = () => {
 
 .type-btn {
   display: flex;
-<<<<<<< HEAD
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   border-radius: var(--radius-lg);
-=======
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-4);
-  border-radius: var(--radius-md);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   border: 2px solid var(--border-subtle);
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -345,7 +249,6 @@ const handleSubmit = () => {
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-fast);
-<<<<<<< HEAD
   position: relative;
   overflow: hidden;
 }
@@ -356,14 +259,11 @@ const handleSubmit = () => {
   inset: 0;
   opacity: 0;
   transition: opacity var(--transition-fast);
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .type-btn:hover {
   border-color: var(--blue-light);
   color: var(--blue);
-<<<<<<< HEAD
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
 }
@@ -392,31 +292,13 @@ const handleSubmit = () => {
 .type-icon {
   width: 42px;
   height: 42px;
-=======
-}
-
-.type-btn.active {
-  background: linear-gradient(135deg, rgba(43, 123, 187, 0.08), rgba(0, 100, 178, 0.08));
-  border-color: var(--blue);
-  color: var(--blue-dark);
-}
-
-.type-icon {
-  width: 36px;
-  height: 36px;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
   font-size: 1rem;
   transition: all var(--transition-fast);
   flex-shrink: 0;
-=======
-  font-size: 0.9rem;
-  transition: all var(--transition-fast);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .type-icon.income {
@@ -433,17 +315,13 @@ const handleSubmit = () => {
   background: var(--income);
   color: white;
   box-shadow: 0 4px 12px var(--income-glow);
-<<<<<<< HEAD
   animation: bounceIn 0.4s ease;
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .type-btn.active .type-icon.expense {
   background: var(--expense);
   color: white;
   box-shadow: 0 4px 12px var(--expense-glow);
-<<<<<<< HEAD
   animation: bounceIn 0.4s ease;
 }
 
@@ -499,10 +377,6 @@ const handleSubmit = () => {
 }
 
 /* Amount Input */
-=======
-}
-
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .amount-input {
   position: relative;
   display: flex;
@@ -514,17 +388,12 @@ const handleSubmit = () => {
   left: var(--space-4);
   color: var(--blue-medium);
   font-weight: 700;
-<<<<<<< HEAD
   font-size: 1.2rem;
   z-index: 1;
-=======
-  font-size: 1.1rem;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .amount-input input {
   padding-left: 2.2rem;
-<<<<<<< HEAD
   font-size: 1.2rem;
   font-weight: 700;
   font-family: var(--font-mono);
@@ -669,26 +538,12 @@ const handleSubmit = () => {
   0% { transform: scale(0.5); opacity: 0; }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); opacity: 1; }
-=======
-  font-size: 1.15rem;
-  font-weight: 700;
-  font-family: var(--font-mono);
-  color: var(--text-primary);
-}
-
-.btn.full-width {
-  grid-column: 1 / -1;
-  padding: var(--space-4);
-  font-size: 1rem;
-  margin-top: var(--space-2);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 @media (max-width: 640px) {
   .form-grid {
     grid-template-columns: 1fr;
   }
-<<<<<<< HEAD
 
   .type-selector {
     grid-template-columns: 1fr;
@@ -699,8 +554,3 @@ const handleSubmit = () => {
   }
 }
 </style>
-
-=======
-}
-</style>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

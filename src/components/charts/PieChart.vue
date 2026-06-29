@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div class="chart-wrapper">
     <div v-if="!chartData || chartData.labels.length === 0" class="chart-empty">
@@ -47,29 +46,11 @@
         </div>
       </div>
     </template>
-=======
-<<template>
-  <div class="chart-wrapper">
-    <div class="chart-container">
-      <Pie v-if="chartData" :data="chartData" :options="options" />
-    </div>
-    <div v-if="chartData" class="chart-legend">
-      <div v-for="(label, i) in chartData.labels" :key="label" class="legend-item">
-        <span class="legend-dot" :style="{ background: chartData.datasets[0].backgroundColor[i] }"></span>
-        <span class="legend-label">{{ label }}</span>
-        <span class="legend-value">${{ chartData.datasets[0].data[i].toLocaleString() }}</span>
-      </div>
-    </div>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   </div>
 </template>
 
 <script setup>
-<<<<<<< HEAD
 import { ref, computed } from 'vue';
-=======
-import { computed } from 'vue';
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 import { Pie } from 'vue-chartjs';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 
@@ -79,12 +60,9 @@ const props = defineProps({
   data: { type: Object, required: true }
 });
 
-<<<<<<< HEAD
 const activeIndex = ref(null);
 const chartContainer = ref(null);
 
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 const colors = [
   '#0064B2', '#2B7BBB', '#5692C2', '#81A9C9',
   '#ACC0D0', '#D7D7D7', '#475569', '#94A3B8'
@@ -94,31 +72,20 @@ const chartData = computed(() => {
   const labels = Object.keys(props.data);
   const values = Object.values(props.data);
   if (labels.length === 0) return null;
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   return {
     labels,
     datasets: [{
       data: values,
       backgroundColor: colors.slice(0, labels.length),
-<<<<<<< HEAD
       borderWidth: 3,
       borderColor: '#FFFFFF',
       hoverOffset: 14,
       hoverBorderWidth: 0
-=======
-      borderWidth: 2,
-      borderColor: '#FFFFFF',
-      hoverOffset: 10
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     }]
   };
 });
 
-<<<<<<< HEAD
 const totalAmount = computed(() => {
   if (!chartData.value) return 0;
   return chartData.value.datasets[0].data.reduce((a, b) => a + b, 0);
@@ -140,12 +107,6 @@ const options = {
     duration: 1000,
     easing: 'easeOutQuart'
   },
-=======
-const options = {
-  responsive: true,
-  maintainAspectRatio: false,
-  cutout: '62%',
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   plugins: {
     legend: { display: false },
     tooltip: {
@@ -156,14 +117,11 @@ const options = {
       borderWidth: 1,
       padding: 14,
       cornerRadius: 12,
-<<<<<<< HEAD
       displayColors: true,
       boxWidth: 10,
       boxHeight: 10,
       boxPadding: 6,
       usePointStyle: true,
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       callbacks: {
         label: (context) => {
           const total = context.dataset.data.reduce((a, b) => a + b, 0);
@@ -172,7 +130,6 @@ const options = {
         }
       }
     }
-<<<<<<< HEAD
   },
   onHover: (event, elements) => {
     if (elements.length > 0) {
@@ -180,8 +137,6 @@ const options = {
     } else {
       activeIndex.value = null;
     }
-=======
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   }
 };
 </script>
@@ -196,7 +151,6 @@ const options = {
 .chart-container {
   height: 220px;
   position: relative;
-<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -234,20 +188,11 @@ const options = {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-=======
-}
-
-.chart-legend {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-3);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   gap: var(--space-3);
   font-size: 0.85rem;
   padding: var(--space-2) var(--space-3);
@@ -299,29 +244,10 @@ const options = {
   flex-direction: column;
   flex: 1;
   gap: 1px;
-=======
-  gap: var(--space-2);
-  font-size: 0.8rem;
-  padding: var(--space-2);
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast);
-}
-
-.legend-item:hover {
-  background: var(--bg-tertiary);
-}
-
-.legend-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: var(--radius-full);
-  flex-shrink: 0;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .legend-label {
   color: var(--text-secondary);
-<<<<<<< HEAD
   font-weight: 500;
   font-size: 0.85rem;
 }
@@ -331,14 +257,10 @@ const options = {
   font-size: 0.75rem;
   font-weight: 600;
   font-family: var(--font-mono);
-=======
-  flex: 1;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .legend-value {
   color: var(--text-primary);
-<<<<<<< HEAD
   font-weight: 700;
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -423,10 +345,3 @@ const options = {
   }
 }
 </style>
-=======
-  font-weight: 600;
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-</style>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

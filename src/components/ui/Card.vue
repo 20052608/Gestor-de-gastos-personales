@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <template>
   <div 
     class="ui-card" 
@@ -26,24 +25,10 @@
         <slot name="footer" />
       </div>
     </template>
-=======
-<<template>
-  <div class="ui-card" :class="[variant, { hoverable, glow }]">
-    <div v-if="$slots.header" class="ui-card-header">
-      <slot name="header" />
-    </div>
-    <div class="ui-card-body">
-      <slot />
-    </div>
-    <div v-if="$slots.footer" class="ui-card-footer">
-      <slot name="footer" />
-    </div>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   </div>
 </template>
 
 <script setup>
-<<<<<<< HEAD
 import { computed } from 'vue';
 
 const props = defineProps({
@@ -59,12 +44,6 @@ const customStyle = computed(() => {
     return { animationDelay: `${props.delay}ms` };
   }
   return {};
-=======
-defineProps({
-  variant: { type: String, default: 'default' },
-  hoverable: { type: Boolean, default: false },
-  glow: { type: Boolean, default: false }
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 });
 </script>
 
@@ -76,7 +55,6 @@ defineProps({
   overflow: hidden;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-sm);
-<<<<<<< HEAD
   position: relative;
   animation: fadeInScale 0.5s ease forwards;
   opacity: 0;
@@ -86,14 +64,6 @@ defineProps({
   transform: translateY(-3px);
   border-color: var(--border-default);
   box-shadow: var(--shadow-md), 0 12px 40px rgba(0, 100, 178, 0.08);
-=======
-}
-
-.ui-card.hoverable:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-default);
-  box-shadow: var(--shadow-md);
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .ui-card.glow {
@@ -105,7 +75,6 @@ defineProps({
   position: absolute;
   inset: -1px;
   border-radius: var(--radius-lg);
-<<<<<<< HEAD
   background: linear-gradient(135deg, var(--blue), var(--blue-dark), var(--blue-light), var(--blue));
   background-size: 300% 300%;
   opacity: 0;
@@ -151,16 +120,6 @@ defineProps({
 .ui-card.glass {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
-=======
-  background: linear-gradient(135deg, var(--blue), var(--blue-dark));
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--transition-base);
-}
-
-.ui-card.glow:hover::before {
-  opacity: 0.15;
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .ui-card-header {
@@ -177,7 +136,6 @@ defineProps({
   margin-top: var(--space-4);
   padding-top: var(--space-4);
 }
-<<<<<<< HEAD
 
 /* Skeleton Loading */
 .ui-card-skeleton {
@@ -244,6 +202,3 @@ defineProps({
   transition: 0s;
 }
 </style>
-=======
-</style>
->>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
