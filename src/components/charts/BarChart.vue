@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="chart-wrapper">
     <div v-if="!chartData || chartData.labels.length === 0" class="chart-empty">
@@ -16,6 +17,11 @@
     <div v-else class="chart-container">
       <Bar :data="chartData" :options="options" />
     </div>
+=======
+<<template>
+  <div class="chart-container">
+    <Bar v-if="chartData" :data="chartData" :options="options" />
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   </div>
 </template>
 
@@ -31,8 +37,11 @@ const props = defineProps({
 });
 
 const chartData = computed(() => {
+<<<<<<< HEAD
   if (props.data.length === 0) return null;
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   return {
     labels: props.data.map(d => {
       const [year, month] = d.month.split('-');
@@ -43,6 +52,7 @@ const chartData = computed(() => {
       {
         label: 'Ingresos',
         data: props.data.map(d => d.income),
+<<<<<<< HEAD
         backgroundColor: (ctx) => {
           const canvas = ctx.chart.ctx;
           const gradient = canvas.createLinearGradient(0, 0, 0, 280);
@@ -56,10 +66,18 @@ const chartData = computed(() => {
         hoverBackgroundColor: '#0064B2',
         hoverBorderWidth: 0,
         hoverBorderRadius: { topLeft: 12, topRight: 12, bottomLeft: 0, bottomRight: 0 }
+=======
+        backgroundColor: '#2B7BBB',
+        borderRadius: 8,
+        borderSkipped: false,
+        barThickness: 24,
+        hoverBackgroundColor: '#0064B2',
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       },
       {
         label: 'Gastos',
         data: props.data.map(d => d.expense),
+<<<<<<< HEAD
         backgroundColor: (ctx) => {
           const canvas = ctx.chart.ctx;
           const gradient = canvas.createLinearGradient(0, 0, 0, 280);
@@ -73,6 +91,13 @@ const chartData = computed(() => {
         hoverBackgroundColor: '#81A9C9',
         hoverBorderWidth: 0,
         hoverBorderRadius: { topLeft: 12, topRight: 12, bottomLeft: 0, bottomRight: 0 }
+=======
+        backgroundColor: '#ACC0D0',
+        borderRadius: 8,
+        borderSkipped: false,
+        barThickness: 24,
+        hoverBackgroundColor: '#81A9C9',
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       }
     ]
   };
@@ -81,6 +106,7 @@ const chartData = computed(() => {
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+<<<<<<< HEAD
   animation: {
     duration: 1200,
     easing: 'easeOutQuart',
@@ -92,6 +118,8 @@ const options = {
       return delay;
     }
   },
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   plugins: {
     legend: {
       position: 'top',
@@ -99,10 +127,16 @@ const options = {
       labels: {
         usePointStyle: true,
         pointStyle: 'circle',
+<<<<<<< HEAD
         pointRadius: 6,
         padding: 20,
         color: '#475569',
         font: { size: 12, family: 'Plus Jakarta Sans', weight: '600' }
+=======
+        padding: 20,
+        color: '#475569',
+        font: { size: 12, family: 'Inter', weight: '500' }
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       }
     },
     tooltip: {
@@ -113,11 +147,14 @@ const options = {
       borderWidth: 1,
       padding: 14,
       cornerRadius: 12,
+<<<<<<< HEAD
       displayColors: true,
       boxWidth: 10,
       boxHeight: 10,
       boxPadding: 6,
       usePointStyle: true,
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       callbacks: {
         label: (context) => ` ${context.dataset.label}: $${context.raw.toLocaleString()}`
       }
@@ -126,6 +163,7 @@ const options = {
   scales: {
     x: {
       grid: { display: false },
+<<<<<<< HEAD
       ticks: { 
         color: '#94A3B8', 
         font: { size: 11, family: 'Plus Jakarta Sans', weight: '500' },
@@ -152,20 +190,33 @@ const options = {
   interaction: {
     mode: 'index',
     intersect: false
+=======
+      ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' } }
+    },
+    y: {
+      beginAtZero: true,
+      grid: { color: 'rgba(43, 123, 187, 0.06)', drawBorder: false },
+      ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' }, callback: (value) => `$${value}` }
+    }
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   }
 };
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .chart-wrapper {
   width: 100%;
   height: 100%;
 }
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .chart-container {
   height: 280px;
   position: relative;
 }
+<<<<<<< HEAD
 
 /* Empty State */
 .chart-empty {
@@ -227,3 +278,6 @@ const options = {
   }
 }
 </style>
+=======
+</style>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

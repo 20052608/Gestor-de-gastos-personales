@@ -67,10 +67,13 @@ const deleteTransaction = (id) => {
   transactions.value = transactions.value.filter(t => t.id !== id);
 };
 
+<<<<<<< HEAD
 const updateBudget = (category, amount) => {
   budgets.value[category] = amount;
 };
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 const exportToCSV = () => {
   const headers = ['ID', 'Fecha', 'Tipo', 'Categoria', 'Monto', 'Descripcion'];
   const rows = transactions.value.map(t => [t.id, t.date, t.type, t.category, t.amount, `"${t.description || ''}"`]);
@@ -86,6 +89,10 @@ export function useFinanceStore() {
   return {
     transactions, budgets, categories, totalBalance, currentMonthTransactions,
     expensesByCategory, budgetAlerts, monthlyTrend,
+<<<<<<< HEAD
     addTransaction, deleteTransaction, updateBudget, exportToCSV
+=======
+    addTransaction, deleteTransaction, exportToCSV
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   };
 }

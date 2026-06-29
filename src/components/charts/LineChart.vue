@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="chart-wrapper">
     <div v-if="!chartData || chartData.labels.length === 0" class="chart-empty">
@@ -21,6 +22,11 @@
     <div v-else class="chart-container">
       <Line :data="chartData" :options="options" />
     </div>
+=======
+<<template>
+  <div class="chart-container">
+    <Line v-if="chartData" :data="chartData" :options="options" />
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   </div>
 </template>
 
@@ -36,8 +42,11 @@ const props = defineProps({
 });
 
 const chartData = computed(() => {
+<<<<<<< HEAD
   if (props.data.length === 0) return null;
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   return {
     labels: props.data.map(d => {
       const [year, month] = d.month.split('-');
@@ -51,8 +60,12 @@ const chartData = computed(() => {
       backgroundColor: (context) => {
         const ctx = context.chart.ctx;
         const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+<<<<<<< HEAD
         gradient.addColorStop(0, 'rgba(43, 123, 187, 0.3)');
         gradient.addColorStop(0.5, 'rgba(43, 123, 187, 0.1)');
+=======
+        gradient.addColorStop(0, 'rgba(43, 123, 187, 0.25)');
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
         gradient.addColorStop(1, 'rgba(43, 123, 187, 0)');
         return gradient;
       },
@@ -62,12 +75,20 @@ const chartData = computed(() => {
       pointBorderColor: '#2B7BBB',
       pointBorderWidth: 2.5,
       pointRadius: 5,
+<<<<<<< HEAD
       pointHoverRadius: 8,
       pointHoverBackgroundColor: '#2B7BBB',
       pointHoverBorderColor: '#FFFFFF',
       pointHoverBorderWidth: 3,
       borderWidth: 2.5,
       hoverOffset: 4
+=======
+      pointHoverRadius: 7,
+      pointHoverBackgroundColor: '#2B7BBB',
+      pointHoverBorderColor: '#FFFFFF',
+      pointHoverBorderWidth: 3,
+      borderWidth: 2.5
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     }]
   };
 });
@@ -75,6 +96,7 @@ const chartData = computed(() => {
 const options = {
   responsive: true,
   maintainAspectRatio: false,
+<<<<<<< HEAD
   animation: {
     duration: 1500,
     easing: 'easeOutQuart',
@@ -86,6 +108,8 @@ const options = {
       return delay;
     }
   },
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   plugins: {
     legend: { display: false },
     tooltip: {
@@ -98,17 +122,22 @@ const options = {
       cornerRadius: 12,
       displayColors: false,
       callbacks: {
+<<<<<<< HEAD
         label: (context) => {
           const val = context.raw;
           const sign = val >= 0 ? '+' : '';
           return ` Balance: ${sign}$${val.toLocaleString()}`;
         }
+=======
+        label: (context) => ` Balance: $${context.raw.toLocaleString()}`
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       }
     }
   },
   scales: {
     x: {
       grid: { display: false },
+<<<<<<< HEAD
       ticks: { 
         color: '#94A3B8', 
         font: { size: 11, family: 'Plus Jakarta Sans', weight: '500' },
@@ -135,20 +164,33 @@ const options = {
   interaction: {
     mode: 'index',
     intersect: false
+=======
+      ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' } }
+    },
+    y: {
+      beginAtZero: true,
+      grid: { color: 'rgba(43, 123, 187, 0.06)', drawBorder: false },
+      ticks: { color: '#94A3B8', font: { size: 11, family: 'Inter' }, callback: (value) => `$${value}` }
+    }
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   }
 };
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .chart-wrapper {
   width: 100%;
   height: 100%;
 }
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .chart-container {
   height: 280px;
   position: relative;
 }
+<<<<<<< HEAD
 
 /* Empty State */
 .chart-empty {
@@ -205,3 +247,6 @@ const options = {
   }
 }
 </style>
+=======
+</style>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

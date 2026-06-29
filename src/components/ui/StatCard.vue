@@ -1,16 +1,26 @@
+<<<<<<< HEAD
 <template>
   <Card class="stat-card" :class="[type, { 'is-positive': isPositive, 'is-negative': isNegative, 'is-neutral': isNeutral }]" hoverable :delay="delay">
+=======
+<<template>
+  <Card class="stat-card" :class="type" hoverable>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     <template #header>
       <div class="stat-header">
         <div class="icon-wrapper" :class="type">
           <i :class="icon"></i>
         </div>
+<<<<<<< HEAD
         <div v-if="trend !== null" class="trend" :class="trendDirection">
+=======
+        <div v-if="trend" class="trend" :class="trendDirection">
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
           <i :class="trendIcon"></i>
           <span>{{ trend }}%</span>
         </div>
       </div>
     </template>
+<<<<<<< HEAD
 
     <div class="stat-content">
       <span class="stat-label">{{ label }}</span>
@@ -33,6 +43,14 @@
       </div>
     </div>
 
+=======
+    
+    <div class="stat-content">
+      <span class="stat-label">{{ label }}</span>
+      <span class="stat-value" :class="type">${{ formattedValue }}</span>
+    </div>
+    
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
     <template v-if="progress !== null" #footer>
       <div class="stat-progress">
         <div class="progress-info">
@@ -40,9 +58,13 @@
           <span class="progress-percent">{{ progress }}%</span>
         </div>
         <div class="progress-bar">
+<<<<<<< HEAD
           <div class="progress-fill" :class="type" :style="{ width: progress + '%' }">
             <div class="progress-shimmer"></div>
           </div>
+=======
+          <div class="progress-fill" :class="type" :style="{ width: progress + '%' }"></div>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
         </div>
       </div>
     </template>
@@ -61,9 +83,13 @@ const props = defineProps({
   trend: { type: Number, default: null },
   trendDirection: { type: String, default: 'up' },
   progress: { type: Number, default: null },
+<<<<<<< HEAD
   progressLabel: { type: String, default: '' },
   sparklineData: { type: Array, default: () => [] },
   delay: { type: Number, default: 0 }
+=======
+  progressLabel: { type: String, default: '' }
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 });
 
 const formattedValue = computed(() => {
@@ -76,6 +102,7 @@ const formattedValue = computed(() => {
 const trendIcon = computed(() => {
   return props.trendDirection === 'up' ? 'fas fa-arrow-up' : 'fas fa-arrow-down';
 });
+<<<<<<< HEAD
 
 const isPositive = computed(() => props.type === 'income' || (props.type === 'balance' && props.value >= 0));
 const isNegative = computed(() => props.type === 'expense' || (props.type === 'balance' && props.value < 0));
@@ -109,6 +136,8 @@ const sparkAreaPath = computed(() => {
   const points = sparkPoints.value.map(p => `${p.x} ${p.y}`).join(' L ');
   return `M ${sparkPoints.value[0].x} 30 L ${points} L ${sparkPoints.value[sparkPoints.value.length - 1].x} 30 Z`;
 });
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 </script>
 
 <style scoped>
@@ -143,6 +172,7 @@ const sparkAreaPath = computed(() => {
 
 .stat-card.balance::before {
   background: var(--accent-gradient);
+<<<<<<< HEAD
 }
 
 .stat-card.is-positive::before {
@@ -151,6 +181,9 @@ const sparkAreaPath = computed(() => {
 
 .stat-card.is-negative::before {
   background: linear-gradient(90deg, #DC2626, #f87171);
+=======
+  opacity: 1;
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .stat-header {
@@ -169,6 +202,7 @@ const sparkAreaPath = computed(() => {
   justify-content: center;
   font-size: 1.2rem;
   transition: all var(--transition-fast);
+<<<<<<< HEAD
   position: relative;
   overflow: hidden;
 }
@@ -205,6 +239,23 @@ const sparkAreaPath = computed(() => {
 
 .stat-card:hover .icon-wrapper {
   transform: scale(1.08) rotate(-4deg);
+=======
+}
+
+.icon-wrapper.income {
+  background: var(--income-soft);
+  color: var(--income);
+}
+
+.icon-wrapper.expense {
+  background: var(--expense-soft);
+  color: var(--expense);
+}
+
+.icon-wrapper.balance {
+  background: linear-gradient(135deg, rgba(43, 123, 187, 0.15), rgba(0, 100, 178, 0.15));
+  color: var(--blue);
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .trend {
@@ -215,7 +266,10 @@ const sparkAreaPath = computed(() => {
   border-radius: var(--radius-full);
   font-size: 0.8rem;
   font-weight: 600;
+<<<<<<< HEAD
   animation: countUp 0.5s ease forwards;
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .trend.up {
@@ -238,8 +292,11 @@ const sparkAreaPath = computed(() => {
   font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 500;
+<<<<<<< HEAD
   text-transform: uppercase;
   letter-spacing: 0.5px;
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .stat-value {
@@ -248,6 +305,7 @@ const sparkAreaPath = computed(() => {
   font-family: var(--font-mono);
   letter-spacing: -0.03em;
   line-height: 1.2;
+<<<<<<< HEAD
   display: flex;
   align-items: baseline;
   gap: 2px;
@@ -262,6 +320,8 @@ const sparkAreaPath = computed(() => {
 
 .stat-value .amount {
   font-variant-numeric: tabular-nums;
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .stat-value.income { color: var(--income); }
@@ -273,6 +333,7 @@ const sparkAreaPath = computed(() => {
   background-clip: text;
 }
 
+<<<<<<< HEAD
 .stat-value.is-negative {
   color: var(--expense);
 }
@@ -293,6 +354,8 @@ const sparkAreaPath = computed(() => {
   height: 100%;
 }
 
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 .stat-progress {
   margin-top: var(--space-4);
   padding-top: var(--space-4);
@@ -310,7 +373,10 @@ const sparkAreaPath = computed(() => {
 .progress-percent {
   color: var(--blue);
   font-weight: 600;
+<<<<<<< HEAD
   font-family: var(--font-mono);
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .progress-bar {
@@ -318,12 +384,16 @@ const sparkAreaPath = computed(() => {
   background: var(--bg-tertiary);
   border-radius: var(--radius-full);
   overflow: hidden;
+<<<<<<< HEAD
   position: relative;
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .progress-fill {
   height: 100%;
   border-radius: var(--radius-full);
+<<<<<<< HEAD
   transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
@@ -350,3 +420,12 @@ const sparkAreaPath = computed(() => {
   100% { transform: translateX(100%); }
 }
 </style>
+=======
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-fill.income { background: var(--income); }
+.progress-fill.expense { background: var(--expense); }
+.progress-fill.balance { background: var(--accent-gradient); }
+</style>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771

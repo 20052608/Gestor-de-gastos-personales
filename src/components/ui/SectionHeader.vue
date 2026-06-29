@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <template>
   <div class="section-header" :class="{ 'with-divider': divider, 'compact': compact, 'centered': centered }">
     <div class="section-title">
@@ -11,6 +12,17 @@
           <span class="badge-dot"></span>
           {{ badge }}
         </div>
+=======
+<<template>
+  <div class="section-header">
+    <div class="section-title">
+      <div v-if="icon" class="section-icon">
+        <i :class="icon"></i>
+      </div>
+      <div>
+        <h2>{{ title }}</h2>
+        <p v-if="subtitle">{{ subtitle }}</p>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
       </div>
     </div>
     <div v-if="$slots.actions" class="section-actions">
@@ -23,6 +35,7 @@
 defineProps({
   title: { type: String, required: true },
   subtitle: { type: String, default: '' },
+<<<<<<< HEAD
   icon: { type: String, default: '' },
   iconVariant: { type: String, default: 'default' },
   badge: { type: String, default: '' },
@@ -30,6 +43,9 @@ defineProps({
   divider: { type: Boolean, default: false },
   compact: { type: Boolean, default: false },
   centered: { type: Boolean, default: false }
+=======
+  icon: { type: String, default: '' }
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 });
 </script>
 
@@ -39,6 +55,7 @@ defineProps({
   justify-content: space-between;
   align-items: center;
   margin-bottom: var(--space-5);
+<<<<<<< HEAD
   animation: slideIn 0.4s ease forwards;
 }
 
@@ -70,6 +87,8 @@ defineProps({
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .section-title {
@@ -79,14 +98,20 @@ defineProps({
 }
 
 .section-icon {
+<<<<<<< HEAD
   width: 40px;
   height: 40px;
+=======
+  width: 36px;
+  height: 36px;
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
   border-radius: var(--radius-md);
   background: linear-gradient(135deg, var(--blue), var(--blue-dark));
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+<<<<<<< HEAD
   font-size: 0.95rem;
   box-shadow: 0 2px 8px rgba(43, 123, 187, 0.25);
   transition: all var(--transition-fast);
@@ -137,18 +162,33 @@ defineProps({
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.3;
+=======
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(43, 123, 187, 0.25);
+}
+
+.section-title h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .section-title p {
   font-size: 0.85rem;
   color: var(--text-secondary);
   margin-top: 2px;
+<<<<<<< HEAD
   font-weight: 500;
+=======
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
 }
 
 .section-actions {
   display: flex;
   gap: var(--space-2);
+<<<<<<< HEAD
   align-items: center;
 }
 
@@ -222,3 +262,7 @@ defineProps({
   }
 }
 </style>
+=======
+}
+</style>
+>>>>>>> f5656afaff5a38d47f13d79ce74b0095bf391771
