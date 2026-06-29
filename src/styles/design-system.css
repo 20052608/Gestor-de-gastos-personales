@@ -1,0 +1,501 @@
+/* ============================================
+   SISTEMA DE DISEÑO - FinTrack Pro v2.0
+   Paleta: #D7D7D7 → #ACC0D0 → #81A9C9 → #5692C2 → #2B7BBB → #0064B2
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root {
+  /* === PALETA DE AZULES === */
+  --gray-light: #D7D7D7;
+  --blue-very-light: #ACC0D0;
+  --blue-light: #81A9C9;
+  --blue-medium: #5692C2;
+  --blue: #2B7BBB;
+  --blue-dark: #0064B2;
+
+  /* === FONDOS === */
+  --bg-primary: #F0F4F8;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #E8EEF4;
+  --bg-elevated: #DDE5EE;
+  --bg-hover: #CBD5E1;
+  --bg-sidebar: #0F172A;
+  --bg-sidebar-hover: rgba(255,255,255,0.06);
+  --bg-sidebar-active: rgba(43, 123, 187, 0.15);
+
+  /* === TEXTO === */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --text-inverse: #FFFFFF;
+  --text-sidebar: #CBD5E1;
+  --text-sidebar-muted: #64748B;
+
+  /* === ACENTOS === */
+  --accent-primary: var(--blue);
+  --accent-primary-hover: var(--blue-dark);
+  --accent-secondary: var(--blue-medium);
+  --accent-gradient: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
+  --accent-gradient-soft: linear-gradient(135deg, var(--blue-light) 0%, var(--blue) 100%);
+
+  /* === ESTADOS FINANCIEROS === */
+  --income: #059669;
+  --income-soft: rgba(5, 150, 105, 0.12);
+  --income-glow: rgba(5, 150, 105, 0.25);
+  --expense: #DC2626;
+  --expense-soft: rgba(220, 38, 38, 0.12);
+  --expense-glow: rgba(220, 38, 38, 0.25);
+  --warning: #D97706;
+  --warning-soft: rgba(217, 119, 6, 0.12);
+  --info: #3B82F6;
+  --info-soft: rgba(59, 130, 246, 0.12);
+
+  /* === BORDES === */
+  --border-subtle: rgba(43, 123, 187, 0.08);
+  --border-default: rgba(43, 123, 187, 0.15);
+  --border-focus: rgba(43, 123, 187, 0.4);
+
+  /* === SOMBRAS === */
+  --shadow-sm: 0 1px 2px rgba(0, 100, 178, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 100, 178, 0.10);
+  --shadow-lg: 0 8px 30px rgba(0, 100, 178, 0.15);
+  --shadow-glow: 0 0 25px rgba(43, 123, 187, 0.25);
+  --shadow-blue: 0 4px 20px rgba(43, 123, 187, 0.2);
+  --shadow-sidebar: 4px 0 24px rgba(0,0,0,0.08);
+
+  /* === TIPOGRAFÍA === */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* === ESPACIADO === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+
+  /* === BORDES REDONDEADOS === */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+  --radius-full: 9999px;
+
+  /* === TRANSICIONES === */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blue-medium);
+}
+
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.text-gradient {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   ANIMACIONES KEYFRAMES
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.95) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(16px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ripple {
+  0% { transform: scale(0); opacity: 0.4; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes skeleton {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.btn:hover::after {
+  opacity: 1;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: var(--shadow-blue);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow), var(--shadow-blue);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--blue);
+  border: 1.5px solid var(--border-default);
+}
+
+.btn-secondary:hover {
+  background: var(--blue-very-light);
+  border-color: var(--blue-light);
+  color: var(--blue-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.btn-ghost:hover {
+  color: var(--blue);
+  background: var(--bg-tertiary);
+}
+
+.btn-danger {
+  background: var(--expense-soft);
+  color: var(--expense);
+  border: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.btn-danger:hover {
+  background: var(--expense);
+  color: white;
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-6);
+  font-size: 1rem;
+}
+
+/* ============================================
+   INPUTS
+   ============================================ */
+
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all var(--transition-fast);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--blue-light);
+  box-shadow: 0 0 0 3px rgba(43, 123, 187, 0.12);
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%235692C2' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 5.646a.5.5 0 0 1 .708 0L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 2.5rem;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  border-color: var(--border-default);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================
+   BADGES
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-income {
+  background: var(--income-soft);
+  color: var(--income);
+}
+
+.badge-expense {
+  background: var(--expense-soft);
+  color: var(--expense);
+}
+
+.badge-warning {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.badge-info {
+  background: var(--info-soft);
+  color: var(--info);
+}
+
+/* ============================================
+   PROGRESS BARS
+   ============================================ */
+
+.progress-bar {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   LIST ITEMS
+   ============================================ */
+
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.list-item:hover {
+  background: var(--bg-tertiary);
+}
+
+/* ============================================
+   ICON CIRCLES
+   ============================================ */
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.icon-circle-income {
+  background: var(--income-soft);
+  color: var(--income);
+}
+
+.icon-circle-expense {
+  background: var(--expense-soft);
+  color: var(--expense);
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-tertiary) 25%, var(--bg-elevated) 50%, var(--bg-tertiary) 75%);
+  background-size: 200px 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================
+   TOOLTIP
+   ============================================ */
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  padding: var(--space-2) var(--space-3);
+  background: var(--text-primary);
+  color: white;
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-fast);
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
